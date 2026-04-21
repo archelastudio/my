@@ -1,0 +1,253 @@
+/** Miscellaneous **/
+:root {
+  --meta-font-font-family:'volina';
+}
+
+h1 em, h2 em {
+font-family:var(--meta-font-font-family);
+font-style:normal !important;
+}
+
+/**H4, H5, H6**/
+h4 {font-family: Plus Jakarta Sans;
+}
+
+h5 {font-family: Arimo;
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h6 {font-family: Arimo;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/**BUTTON HOVER STATES**/
+/**BUTTON HOVER STATES - Primary**/
+.page-section[data-section-theme="white"] .sqs-button-element--primary:hover {
+  background-color: #282425 !important;
+    transition: all 0.5s ease;
+  opacity: 1 !important;
+}
+
+.light .sqs-button-element--primary:hover,
+.bright .sqs-button-element--primary:hover {
+  background-color: #282425;
+    transition: all 0.5s ease;
+  opacity: 1 !important;
+}
+
+.dark .sqs-button-element--primary:hover,
+.page-section[data-section-theme="black"] .sqs-button-element--primary:hover {
+  background-color: #FFD8C0 !important;
+  transition: all 0.5s ease;
+  opacity: 1 !important;
+}
+
+/**BUTTON HOVER STATES - Secondary**/
+.page-section[data-section-theme="white"] .sqs-button-element--secondary:hover {
+  background-color: #282425 !important;
+  color: #FEFBF6;
+    transition: all 0.5s ease;
+  opacity: 1 !important;
+}
+
+.light .sqs-button-element--secondary:hover,
+.bright .sqs-button-element--secondary:hover {
+  background-color: #282425 !important;
+  color: #FEFBF6;
+    transition: all 0.5s ease;
+  opacity: 1 !important;
+}
+
+.dark .sqs-button-element--secondary:hover,
+.page-section[data-section-theme="black"] .sqs-button-element--secondary:hover {
+  background-color: #FFD8C0 !important;
+  color: #282425;
+border: none !important;
+  outline: none;
+    transition: all 0.5s ease;
+  opacity: 1 !important;
+}
+
+/** TERTIARY BUTTON **/
+/** TERTIARY BUTTON - Base style (inline text + arrow) **/
+.sqs-button-element--tertiary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #282425; /* change as needed */
+  text-decoration: none;
+}
+
+/** TERTIARY BUTTON - Arrow **/
+.sqs-button-element--tertiary::after {
+  content: "";
+  display: inline-block;
+
+  width: 18px;
+  height: 12px;
+
+  margin-left: 4px; /* 👈 tiny spacing like your design */
+
+  -webkit-mask-image: url("https://static1.squarespace.com/static/691aca7d57ebef2af00136b6/t/69df6920f7740f1110339eb8/1776249120847/right+arrow.svg");
+  mask-image: url("https://static1.squarespace.com/static/691aca7d57ebef2af00136b6/t/69df6920f7740f1110339eb8/1776249120847/right+arrow.svg");
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  background-color: currentColor; /* 👈 matches text color */
+  transition: transform 0.25s ease;
+}
+
+/** TERTIARY BUTTON - Custom underline Hover state (covers text + arrow) **/
+.sqs-button-element--tertiary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: #282425; /* 👈 YOUR hover underline color */
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+/** TERTIARY BUTTON - Dark background line hover state **/
+.dark .sqs-button-element--tertiary::before, .page-section[data-section-theme="black"] .sqs-button-element--tertiary::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+
+  width: 100%;
+  height: 1px;
+
+  background-color: #FEFBF6; /* 👈 YOUR hover underline color */
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+} 
+
+/** TERTIARY BUTTON - Hover state **/
+ .sqs-button-element--tertiary:hover::before {
+  transform: scaleX(1);
+}
+
+.sqs-button-element--tertiary:hover::after {
+  transform: translateX(4px);
+}
+
+/** TERTIARY BUTTON - Remove background on hover (and default state) **/
+.sqs-button-element--tertiary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+
+  background-color: transparent !important;
+  border: none !important;
+
+  color: #282425;
+  text-decoration: none !important;
+}
+
+/** POPOUT MENU **/
+.header-display-desktop .header-nav-list{
+display:none;
+}
+
+/** POPOUT MENU - Menu button to the right**/
+button#hamburger {
+    left: unset !important;
+    right: 0;
+}
+
+/** POPOUT MENU - Slide-out from the right **/
+#hamburger {
+
+left: unset;
+
+right: 0;
+
+}
+#pop-out.menu-nav .menu2 {
+    height:100% !important;
+}
+.menu-nav .menu {
+display:none;
+}
+
+
+.menu-nav .menu2 {
+
+height: 100%;
+
+translate: 100%;
+
+bottom: unset !important;
+
+top: 0 !important;
+
+}
+
+
+.menu-nav.menu-visible .menu2 {
+
+translate: 0;
+
+
+}
+
+
+button#hamburger {
+
+translate:50%;
+
+}
+
+/** POPOUT MENU - Menu text **/
+button#hamburger .burger-box::before {
+
+content: 'MENU';
+font-family: Arimo;
+
+position: absolute;
+
+min-width: max-content;
+
+transition:0.3s;
+
+}
+
+
+button#hamburger[aria-expanded="true"] .burger-box::before {
+
+opacity:0;
+
+}
+
+
+button#hamburger[aria-expanded="false"] .burger-inner > span {
+
+opacity: 0;
+
+}
+
+/** POPOUT MENU - Line height **/
+section[data-section-id="69de115993882b10f592a659"] {
+  h2 {
+    line-height: 2rem;}
+}
